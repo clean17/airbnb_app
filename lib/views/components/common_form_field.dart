@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CommonFormField extends StatelessWidget {
-  const CommonFormField({Key? key}) : super(key: key);
+  final prefixText;
+  final hintText;
+  const CommonFormField({required this.prefixText, required this.hintText});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class CommonFormField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.bottom,
           decoration: InputDecoration(  // 인풋과 박스의 차이는 ?
             contentPadding: EdgeInsets.only(top: 30, left: 20, bottom: 10),
-            hintText: AutofillHints.name,
+            hintText: hintText,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -23,6 +25,16 @@ class CommonFormField extends StatelessWidget {
               ),
             ),
 
+          ),
+        ),
+        Positioned(
+          top: 8,
+          left: 20,
+          child: Text(
+            prefixText,
+            style: TextStyle(
+              fontSize: 10
+            ), // ???
           ),
         )
       ],
