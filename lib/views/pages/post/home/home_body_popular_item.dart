@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 
 class HomeBodyPopularItem extends StatelessWidget {
-  const HomeBodyPopularItem({Key? key}) : super(key: key);
+  final id;
+  final popularList = [
+    "p1.jpeg",
+    "p2.jpeg",
+    "p3.jpeg",
+  ];
+  HomeBodyPopularItem({required this.id});
 
   @override
   Widget build(BuildContext context) {
+
+    double popularItemWidth = MediaQuery.of(context).size.width / 3 -5;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(bottom: 30.0),
       child: Container(
-        color: Colors.red,
-        width: 350,
-        height: 350,
+        constraints: BoxConstraints(
+          minWidth: 320
+        ),
+        child: SizedBox(
+          width: popularItemWidth,
+          child: Column(
+            children: [
+              Text("ㅅㅅ")
+          ],
+        ),
+        ),
+
       ),
     );
   }

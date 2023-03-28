@@ -6,18 +6,22 @@ class HomeBodyPopular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("h1"),
-        Text("h2"),
-        Wrap(
-          children: [
-            HomeBodyPopularItem(),
-            HomeBodyPopularItem(),
-            HomeBodyPopularItem(),
-          ],
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            children: [
+              HomeBodyPopularItem(id: 0),
+              SizedBox(width: 7.5,),
+              HomeBodyPopularItem(id: 1),
+              SizedBox(width: 7.5,),
+              HomeBodyPopularItem(id: 2),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

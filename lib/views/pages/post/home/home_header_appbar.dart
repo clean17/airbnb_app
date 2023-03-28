@@ -5,12 +5,15 @@ class HomeHeaderAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        _logo(),  // ctrl alt m을 이용해서 메소드 분리
-        _menu(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _logo(),  // ctrl alt m을 이용해서 메소드 분리
+          _menu(),
+        ],
+      ),
     );
   }
 
@@ -21,12 +24,18 @@ class HomeHeaderAppbar extends StatelessWidget {
             onTap: (){
 
             },
-            child: Text("로그인")),
+            child: Text("로그인", style: TextStyle(
+              color: Colors.white, fontSize: 20
+            ),)),
+          SizedBox(width: 20,),
           InkWell(
               onTap: (){
 
               },
-              child: Text("회원가입")),
+              child: Text("회원가입", style: TextStyle(
+                color: Colors.white, fontSize: 20
+              ),)),
+          SizedBox(width: 20,)
         ],
       );
   }
@@ -34,8 +43,13 @@ class HomeHeaderAppbar extends StatelessWidget {
   Widget _logo() {
     return Row(
         children: [
-          Image.asset("assets/logo.png"),
-          Text("Airbnb")
+          Image.asset("assets/logo.png",
+            width: 30,
+            height: 30,
+            color: Colors.redAccent,
+          ),
+          SizedBox(width: 15,),
+          Text("Airbnb", style: TextStyle(fontSize: 40, color: Colors.white),)
         ],
       );
   }
