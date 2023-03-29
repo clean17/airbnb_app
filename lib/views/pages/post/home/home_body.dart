@@ -31,6 +31,7 @@ class HomeBody extends StatelessWidget {
           child: Column(
             children: [
               HomeBodyBanner(),
+
               HomeBodyPopular(),
             ],
           ),

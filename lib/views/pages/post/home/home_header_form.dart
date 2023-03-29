@@ -6,10 +6,11 @@ class HomeHeaderForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(top: 20.0),
       child: Align(
-        alignment: Alignment(-0.6, 0), // -1 ~ 1 까지의 범위가 전체 범위
+        alignment: screenWidth < 520 ? Alignment(0, 0) : Alignment(-0.6, 0), // -1 ~ 1 까지의 범위가 전체 범위
         child: Container(
           // 컨테이너에도 color속성을 사용가능하지만 Decoration속성을 사용하면 Decoration의 color를 사용해야한다. 터짐 !!
           width: 420,
@@ -52,6 +53,7 @@ class HomeHeaderForm extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(child: CommonFormField(prefixText: "체크인", hintText: "날짜입력")),
+                          SizedBox(width: 20,),
                           Expanded(child: CommonFormField(prefixText: "체크아웃", hintText: "날짜 입력"))
                         ],
                       ),
@@ -61,6 +63,7 @@ class HomeHeaderForm extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(child: CommonFormField(prefixText: "성인", hintText: "2")),
+                          SizedBox(width: 20,),
                           Expanded(child: CommonFormField(prefixText: "어린이", hintText: "0")),
                         ],
                       ),
