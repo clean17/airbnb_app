@@ -11,7 +11,7 @@ class CommonFormField extends StatelessWidget {
       children: [
         TextFormField(
           textAlignVertical: TextAlignVertical.bottom,
-          decoration: InputDecoration(  // 인풋과 박스의 차이는 ?
+          decoration: InputDecoration(  // 인풋과 박스의| 차이는 ?
             contentPadding: EdgeInsets.only(top: 30, left: 20, bottom: 10),
             hintText: hintText,
             border: OutlineInputBorder(

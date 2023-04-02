@@ -13,7 +13,7 @@ class HomeHeaderForm extends StatelessWidget {
         alignment: screenWidth < 520 ? Alignment(0, 0) : Alignment(-0.6, 0), // -1 ~ 1 까지의 범위가 전체 범위
         child: Container(
           // 컨테이너에도 color속성을 사용가능하지만 Decoration속성을 사용하면 Decoration의 color를 사용해야한다. 터짐 !!
-          width: 420,
+          width: 370,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -84,11 +84,11 @@ class HomeHeaderForm extends StatelessWidget {
                       print('서브밋 클릭됨');
                     }, child: Text("검색",
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 16
                       ),
                     )),
                   )
-
                 ],
               ),
             ),
